@@ -11,6 +11,7 @@ with open("./config.toml", "rb") as f:
 DISSERTATIONS = Path(config["paths"]["dissertations_file"])
 UNIVERSITY_DIR = Path(config["paths"]["university_dir"])
 STUDENTS_FILE = Path(config["paths"]["characteristics_file"])
+NOVELTY_FILE = Path(config["paths"]["novelty_file"])
 TARGET_FILE = Path(config["paths"]["dissertations_master"]) / "individual.csv"
 
 
@@ -35,6 +36,11 @@ if __name__ == '__main__':
     # Estimate language
     df["german"] = (df["language"] == "German").astype("uint8")
     df = df.drop(columns="language")
+
+    # Add novelty estimate
+    cols =["id", "novel", "num_phrases"]
+    novelty = pd.read_csv(NOVELTY_FILE, usecols=cols, index_col=cols[0])
+    df = df.join(novelty)
 
     # Merge treatment indicators
     treatment = pd.read_csv(UNIVERSITY_DIR / "admissions.csv", index_col=0)
