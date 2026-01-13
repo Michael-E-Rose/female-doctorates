@@ -17,7 +17,7 @@ TARGET_FILE = Path(config["paths"]["dissertations_master"]) / "individual.csv"
 if __name__ == '__main__':
     # Read dissertations
     cols = ["id", "year", "University", "discipline", "faculty",
-            "female", "Wikipedia"]
+            "female", "Wikipedia", "language"]
     df = pd.read_csv(DISSERTATIONS, index_col="id", usecols=cols)
     mask = df["faculty"] == "Law"
     df.loc[mask, "discipline"] = "law"
@@ -31,6 +31,10 @@ if __name__ == '__main__':
     # Add student characteristics
     students = pd.read_csv(STUDENTS_FILE, index_col=0)
     df = df.join(students)
+
+    # Estimate language
+    df["german"] = (df["language"] == "German").astype("uint8")
+    df = df.drop(columns="language")
 
     # Merge treatment indicators
     treatment = pd.read_csv(UNIVERSITY_DIR / "admissions.csv", index_col=0)
