@@ -1,9 +1,14 @@
-[directories]
+[paths]
 input_dir = "input"
+substitutions_file = "input/abbreviations.csv"
+dissertations_file = "intermed/100_dissertations.csv"
 figures_dir = "output/figures"
 statistics_dir = "output/statistics"
 maintenance_dir = "output/maintenance"
 tables_dir = "output/tables"
 
 [datasets]
-scopus = "F:/Scopus/"
+hochschulschriften = "https://api.github.com/repos/Michael-E-Rose/Hochschulschriften/contents/80_master/"
+
+[models]
+noun_phrases = "de_core_news_lg"
