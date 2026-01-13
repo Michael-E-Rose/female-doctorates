@@ -1,6 +1,7 @@
 [paths]
 input_dir = "input"
 substitutions_file = "input/abbreviations.csv"
+university_dir = "input/university_data"
 dissertations_file = "intermed/100_dissertations.csv"
 figures_dir = "output/figures"
 statistics_dir = "output/statistics"
