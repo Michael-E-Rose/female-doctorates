@@ -1,0 +1,15 @@
+[directories]
+input_dir = "input"
+figures_dir = "output/figures"
+statistics_dir = "output/statistics"
+maintenance_dir = "output/maintenance"
+tables_dir = "output/tables"
+
+[datasets]
+crunchbase = "F:/Crunchbase/2024-03"
+dealroom = "F:/dealroom/2024-09"
+patstat = "F:/PATSTAT/Spring-24"
+reliance = "F:/reliance_on_science_data/2024-07"
+revelio = "F:/Revelio/2024-02"
+scopus = "F:/Scopus/"
+pubmed = "F:/PubMed/"

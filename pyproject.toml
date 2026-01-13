@@ -1,0 +1,19 @@
+[project]
+name = "Name of project"
+description = "Description of project"
+author = "Your name here"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = "=3.11"
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"License :: OSI Approved :: MIT License",
+	"Intended Audience :: Science/Research",
+	"Natural Language :: English",
+	"Programming Language :: Python :: 3.11"
+]
+dependencies = [
+	"pandas",
+	"python-dotenv",
+	"tqdm"
+]
